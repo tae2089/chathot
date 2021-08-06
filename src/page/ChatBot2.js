@@ -16,14 +16,31 @@ const ChatBotMain = () => {
           {
             id: "2",
             user: true,
-            trigger: "info",
+            trigger: "3",
+          },
+          {
+            id: "3",
+            message: "Hi {previousValue}, nice to meet you!",
+            trigger: "4",
+          },
+          {
+            id: "4",
+            message: "please Select Gender",
+            trigger: "gender",
+          },
+          {
+            id: "gender",
+            options: [
+              { value: "male", label: "Male", trigger: "info" },
+              { value: "female", label: "Female", trigger: "info" },
+            ],
           },
           {
             id: "info",
             component: <Info />,
             asMessage: true,
             waitAction: true,
-            trigger: "2",
+            trigger: "name",
           },
         ]}
       />
