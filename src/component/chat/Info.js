@@ -21,7 +21,17 @@ const Info = (props) => {
       setLoding(false);
       setData(JSON.stringify(rep.data.ip));
     };
-    Promise.all([getip()]).then(() => {
+    const postData = async () => {
+      await axios
+        .post("/data", { step: steps })
+        .then((rep) => {
+          console.log(rep);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    Promise.all([getip(), postData()]).then(() => {
       gotoNext();
     });
   }, []);
