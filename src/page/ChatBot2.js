@@ -6,6 +6,7 @@ const ChatBotMain = () => {
     <div>
       <ChatBot
         headerTitle="Rokit HealthCare chatBot"
+        headerTitle="chatBot"
         recognitionEnable={true}
         steps={[
           {
